@@ -46,12 +46,12 @@ jobs:
       - name: Run ESLint for Static Code Analysis
         run: npm run lint
 
-      - name: Run OWASP Dependency-Check
-        uses: dependency-check/scan-action@v1  # Updated version
-        with:
-          project: react-app
-          format: ALL
-          fail-on-error: false
+      - name: Install OWASP Dependency-Check
+        run: |
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v7.0.3/dependency-check-7.0.3-release.zip
+          unzip dependency-check-7.0.3-release.zip
+          cd dependency-check-7.0.3
+          ./bin/dependency-check.sh --project react-app --scan ../
 
   build-docker:
     name: Build and Push Docker Image

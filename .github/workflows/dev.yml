@@ -2,9 +2,11 @@ name: DevSecOps Pipeline for React.js Frontend
 
 on:
   push:
-    branches: [dev]
+    branches:
+      - dev
   pull_request:
-    branches: [dev]
+    branches:
+      - dev
 
 jobs:
   setup-environment:
@@ -21,7 +23,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --force
 
   run-tests:
     name: Run Smoke and Security Tests
@@ -38,7 +40,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --force
 
       - name: Run Smoke Tests
         run: npm test -- --watchAll=false
@@ -49,13 +51,9 @@ jobs:
       - name: Install and Run OWASP Dependency-Check
         run: |
           wget https://github.com/jeremylong/DependencyCheck/releases/download/v7.0.3/dependency-check-7.0.3-release.zip
-          unzip dependency-check-7.0.3-release.zip -d dc
-          dc/dependency-check/bin/dependency-check.sh --project react-app --scan . --format HTML --out reports
-      - name: Upload OWASP Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-check-report
-          path: reports/
+          unzip dependency-check-7.0.3-release.zip
+          cd dependency-check-7.0.3
+          ./bin/dependency-check.sh --project react-app --scan ../
 
   build-docker:
     name: Build and Push Docker Image
@@ -65,14 +63,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node.js for Build
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --force
 
       - name: Build React App
         run: npm run build

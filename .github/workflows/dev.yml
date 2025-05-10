@@ -22,7 +22,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps  # <-- Update here
+        run: npm install --legacy-peer-deps
 
   run-tests:
     name: Run Smoke and Security Tests
@@ -38,7 +38,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps  # <-- Update here
+        run: npm install --legacy-peer-deps
 
       - name: Run Smoke Tests
         run: npm test -- --watchAll=false
@@ -47,7 +47,7 @@ jobs:
         run: npm run lint
 
       - name: Run OWASP Dependency-Check
-        uses: dependency-check/scan-action@v2
+        uses: dependency-check/scan-action@v1  # Updated version
         with:
           project: react-app
           format: ALL
@@ -60,6 +60,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Setup Node.js for Build
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build React App
+        run: npm run build  # Build the React app for production
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2

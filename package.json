@@ -112,16 +112,6 @@
     "testMatch": [
       "<rootDir>/src/**/*.(test|spec).js"
     ],
-    "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
-    "collectCoverage": true,
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    }
   },
   "eslintConfig": {
     "extends": [

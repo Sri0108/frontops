@@ -1,0 +1,16 @@
+const API_URL = process.env.REACT_APP_API_URL;
+export const getGuestInfo = `${API_URL}/getGuestInfo`;
+export const loop = `${API_URL}/loop`;
+export const netSalesInfo = `${API_URL}/gross_and_netSales`;
+export const spendingRange = `${API_URL}/spendingRange`;
+export const labourTrends = `${API_URL}/labourTrends`;
+export const spendingSegments = `${API_URL}/spendingSegments`;
+export const revenueBreakDown = `${API_URL}/getRevenueBreakdown`;
+export const transactionTimes = `${API_URL}/getTransactionTimes`;
+export const uiHealthCheck = `${API_URL}/health`;
+export const createThread = `${API_URL}/create-thread`;
+export const startChat = `${API_URL}/chat`;
+export const events = `${API_URL}/getEvents`;
+export const imgDownload = `${API_URL}/download`;
+export const streamingChat = `${API_URL}/chat/stream`;
+export const azureEndpoint = `${API_URL}/azure`;

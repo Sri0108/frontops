@@ -1,0 +1,224 @@
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0 1.5rem 0;
+    color: var(--Black-shade-300, #919BA1);
+}
+
+.enter{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+
+.divider::before,
+.divider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: silver;
+    margin: 5px;
+}
+
+.rightcontent {
+    /* background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("../../assets/images/right-background-new.svg"); */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* margin: 40px !important; */
+    /* padding: 40px !important; */
+    border-radius: 20px;
+    position: relative;
+    /* object-fit: contain; */
+    padding: 0 !important;
+}
+
+
+.leftcontent {
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0% !important;
+    /* background-image: url("../../assets/images/login-background.png"); */
+    /* background-size: contain; */
+}
+
+.signin {
+    border-color: white !important;
+    background-color: #38a654 !important;
+}
+
+.righttext {
+    margin-top: 2rem;
+}
+
+.lefttext h4 {
+    font-weight: 700;
+    color: #818181;
+}
+
+.lefttext h3 {
+    font-weight: bold;
+    color: black;
+}
+
+.leftcontent span {
+    position: absolute;
+    bottom: 10px;
+    font-weight: lighter;
+    font-size: xx-small;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px !important;
+    border: 1px solid var(--Gradient, #1E87F2) !important;
+    border: 15px solid #515858;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: transparent !important;
+    color: #050709 !important;
+    /* transition: all 0.3s ease-in-out !important; */
+    
+    
+}
+
+/* .google-button:hover {
+    transform: scale(1.10);
+    } */
+
+
+.google-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.3rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+/* .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+} */
+
+/* .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.3rem;
+    width: 1.3rem;
+    left: 0rem;
+    bottom: 0rem;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+} */
+
+input:checked+.slider {
+    background-color: #263238;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 0.06rem #000000;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(1.4rem);
+    -ms-transform: translateX(1.4rem);
+    transform: translateX(1.4rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 1.8rem;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.reset-pass{
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--Blue-700, #1774E8);
+    padding: 30px 10px 10px 10px;
+}
+
+.sign-in-button {
+font-size: 18px;
+font-weight: bold;
+padding: 0.6rem 1.375rem; /* Makes it wider */
+border: none;
+width: 100%;
+border-radius: 6px; 
+background: var(--Gradient, linear-gradient(90deg, #1E87F2 0%, #9651FF 100%));
+color: white;
+cursor: pointer;
+/* transition: all 0.3s ease-in-out; */
+min-width: 110px;
+}
+    
+/* .sign-in-button:hover {
+background: var(--Gradient, linear-gradient(90deg, #1E87F2 0%, #9651FF 100%));
+transform: scale(1.10);
+} */
+  
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  @media (max-width: 767px) {
+    .rightcontent {
+        display: none !important; /* Completely hide the right side */
+    }
+
+    .leftcontent {
+        flex: 1 0 100%; /* Make the left content take full width */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text inside the left content */
+        min-height: 100vh; /* Ensure it fills the entire viewport */
+    }
+}

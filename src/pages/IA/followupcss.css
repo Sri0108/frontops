@@ -1,0 +1,67 @@
+.cuss-title {
+    width: 40%;
+}
+
+.cuss-link {
+    width: 60%;
+}
+
+.cuss-description {
+    width: 70%;
+}
+
+.cuss-shimmer {
+    width: 95%;
+    height: 120px;
+    background: #ffffff;
+}
+
+.cuss-stroke {
+    height: 15px;
+    background: #777;
+    margin-top: 20px;
+}
+
+.cuss-wrapper {
+    animation: fullView 0.cuss-5s forwards linear;
+}
+.list-style{
+    list-style-type: none;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.a-style{
+    /* padding: 0px !important; */
+    margin-bottom: 6px !important;
+}
+
+.styled-paragraph{
+    
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  
+
+@keyframes fullView {
+    100% {
+        width: 100%;
+    }
+}
+
+.cuss-animate {
+    animation: shimmer 3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+    background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -1000px 0;
+    }
+
+    to {
+        background-position: 1000px 0;
+    }
+}

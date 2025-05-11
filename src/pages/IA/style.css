@@ -1,0 +1,154 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-box {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.spinner-1 {
+  animation-delay: 0.25s !important;
+}
+
+.spinner-2 {
+  animation-delay: 0.5s !important;
+}
+
+.spinner-3 {
+  animation-delay: 0.75s !important;
+}
+
+.typewriter {
+  display: inline-block;
+  width: 100%;
+}
+
+.text {
+  border-right: 2px solid;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  animation: typing 2s, cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.content1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardcontent {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group-container {
+  display: flex;
+  align-items: center;
+}
+
+.send-icon-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.send-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-title-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-icon {
+  font-size: 25px;
+}
+
+.coloradd {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-radius: 8px 8px 8px 0px;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, #EEF9FF 0%, #EEE7FF 100%);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(90deg, #EEF9FF 0%, #EEE7FF 100%),
+    linear-gradient(90deg, #7ab8f7, #b07dfd);
+  border-radius: 8px;
+  background: var(--Gradient, linear-gradient(90deg, #1E87F2 0%, #9651FF 100%));
+}
+
+.send {
+  color: black;
+}
+
+.icons {
+  margin-right: 5px;
+}
+
+.photo-img-loader {
+  height: 0;
+  padding-bottom: 67%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.animate-loader {
+  animation: shimmer 4s infinite linear;
+  background: linear-gradient(110deg, #F4F4F4 50%, #EAEAEB 53%, #F4F4F4 60%);
+  background-size: 1000px 100%;
+}
+
+.list-style{
+  list-style-type: none;
+  padding: 0px !important;
+  margin: 0px !important;
+  
+}
+
+.styled-paragraph{
+  
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+
+  100% {
+    background-position: 500px 0;
+  }
+}

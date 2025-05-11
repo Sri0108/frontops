@@ -1,0 +1,76 @@
+.card-content-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin: 0;
+}
+.expand-icon{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.miniBizzy {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.my-card {
+    border-radius: 12px !important;
+    border: 1px solid !important;
+    border-color: #cfcdcd !important;
+    height: 90% !important;
+}
+
+.filter-title {
+    margin-bottom: 1rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem !important;
+}
+
+.my-footer {
+    background-color: white !important;
+    border-radius: 12px !important;
+    border-bottom: 1px solid !important;
+    border-color: #cfcdcd !important;
+}
+
+.text-button {
+    /* background-color: transparent !important; */
+    border: none !important;
+    /* padding: 0 !important; */
+    box-shadow: none !important;
+    /* color: inherit !important; */
+    cursor: default !important;
+}
+
+.text-button:hover,
+.text-button:focus {
+    background-color: #eff2f7 !important;
+    /* Keep the same background on hover */
+    box-shadow: none !important;
+    /* Remove hover shadow */
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.conversation-list {
+    max-width: 100% !important;
+    margin-bottom: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.on-hover-ia:hover{
+    color:white !important;
+    background-color: #74788d !important;
+  }

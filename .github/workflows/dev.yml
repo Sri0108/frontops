@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps --force
 
-      - name: Install @testing-library/jest-dom
+      - name: Ensure jest-dom is available
         run: npm install --save-dev @testing-library/jest-dom --legacy-peer-deps
 
-      - name: Debug Installed Packages
+      - name: Debug jest-dom installation
         run: npm ls @testing-library/jest-dom
 
       - name: Run Smoke Tests

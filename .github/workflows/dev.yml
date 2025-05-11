@@ -19,6 +19,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
       - name: Install dependencies
         run: npm install --legacy-peer-deps --force
 
@@ -48,10 +56,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:${{ github.sha }} .
 
       - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/react-app:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -59,5 +67,5 @@ jobs:
     steps:
       - name: Deploy Docker Container
         run: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/react-app:latest
-          docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/react-app:${{ github.sha }}
+          docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/react-app:${{ github.sha }}

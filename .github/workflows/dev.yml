@@ -33,6 +33,9 @@ jobs:
       - name: Install @testing-library/jest-dom
         run: npm install --save-dev @testing-library/jest-dom --legacy-peer-deps
 
+      - name: Debug Installed Packages
+        run: npm ls @testing-library/jest-dom
+
       - name: Run Smoke Tests
         run: npm test -- --watchAll=false
 

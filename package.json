@@ -104,14 +104,6 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "testMatch": [
-      "<rootDir>/src/**/*.(test|spec).js"
-    ]
-  },
   "eslintConfig": {
     "extends": [
       "eslint:recommended",

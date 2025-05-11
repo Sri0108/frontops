@@ -111,7 +111,7 @@
     },
     "testMatch": [
       "<rootDir>/src/**/*.(test|spec).js"
-    ],
+    ]
   },
   "eslintConfig": {
     "extends": [

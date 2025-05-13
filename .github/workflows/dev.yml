@@ -18,10 +18,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --force
 
       - name: Ensure jest-dom is installed
-        run: npm install --save-dev @testing-library/jest-dom
+        run: npm install --save-dev @testing-library/jest-dom --force
 
       - name: Smoke Test (unit tests)
         run: npm test -- --watchAll=false --passWithNoTests

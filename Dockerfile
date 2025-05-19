@@ -10,6 +10,9 @@ COPY . .
 
 ENV REACT_APP_API_URL="https://opsentrix.com/hub/api"
 
+# Run tests before building. This will fail the build if tests fail.
+RUN npm test -- --watchAll=false --passWithNoTests
+
 RUN npm run build
 
 FROM nginx:alpine

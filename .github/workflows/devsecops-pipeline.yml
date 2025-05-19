@@ -2,9 +2,9 @@ name: DevSecOps Pipeline for React.js Frontend
 
 on:
   push:
-    branches: [develop]
+    branches: dev
   pull_request:
-    branches: [develop]
+    branches: dev
 
 jobs:
   run-tests:

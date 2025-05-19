@@ -10,7 +10,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import BootstrapTheme from "@fullcalendar/bootstrap";
-import allLocales from '@fullcalendar/core/locales-all';
+import allLocales from '@fullcalendar/core/locales-all.cjs';
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";

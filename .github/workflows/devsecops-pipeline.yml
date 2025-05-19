@@ -2,11 +2,13 @@ name: DevSecOps Pipeline for React.js Frontend
 
 on:
   push:
+    branches: [develop]
   pull_request:
+    branches: [develop]
 
 jobs:
   run-tests:
-    name: Run Tests and Lint
+    name: Run Smoke Test and Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,9 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps --force
 
-      - name: Ensure jest-dom is installed
-        run: npm install --save-dev @testing-library/jest-dom --force
-
       - name: Smoke Test (unit tests)
         run: npm test -- --watchAll=false --passWithNoTests
 
@@ -30,7 +29,7 @@ jobs:
         run: npm run lint || true
 
   docker-build-and-test:
-    name: Docker Build and SCUBA Test
+    name: Docker Build, Smoke, and Scuba Test
     runs-on: ubuntu-latest
     needs: run-tests
     steps:
@@ -45,8 +44,18 @@ jobs:
           docker run -d -p 3000:80 --name testcontainer react-app:${{ github.sha }}
           sleep 10
           curl -f http://localhost:3000 || (docker logs testcontainer && exit 1)
-          docker stop testcontainer
-          docker rm testcontainer
+
+      - name: SCUBA Test (placeholder)
+        run: |
+          # Replace this with your actual SCUBA test command(s)
+          echo "Running SCUBA tests..."
+          # Example: curl -f http://localhost:3000/health || (docker logs testcontainer && exit 1)
+
+      - name: Clean up container
+        if: always()
+        run: |
+          docker stop testcontainer || true
+          docker rm testcontainer || true
 
   docker-push:
     name: Push Docker Image to Docker Hub

@@ -19,8 +19,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps --force
+      - name: Install dependencies (including missing peer deps)
+        run: |
+          npm install --legacy-peer-deps --force
+          npm install swiper --save
+          npm install --save-dev @testing-library/dom
 
       - name: Smoke Test (unit tests)
         run: npm test -- --watchAll=false --passWithNoTests
